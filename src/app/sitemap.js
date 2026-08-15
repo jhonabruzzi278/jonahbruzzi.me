@@ -20,10 +20,19 @@ export default async function sitemap() {
     priority: route.priority,
   }));
 
-  const [{ products }, { categories }] = await Promise.all([
-    getShowingProducts(),
-    getShowingCategories(),
-  ]);
+  // WooCommerce can be transiently unreachable (e.g. the origin host's
+  // firewall dropping connections) — a failure here must not crash the
+  // whole production build. Fall back to just the static routes.
+  let products = [];
+  let categories = [];
+  try {
+    [{ products }, { categories }] = await Promise.all([
+      getShowingProducts(),
+      getShowingCategories(),
+    ]);
+  } catch (error) {
+    console.error("sitemap: failed to load products/categories", error);
+  }
 
   const productEntries = products.map((product) => ({
     url: `${siteConfig.url}/product-details/${product._id}`,
