@@ -119,8 +119,8 @@ const Footer = () => {
                         </div>
                         <div className="footer__contact-mail">
                           <span>
-                            <a href="mailto:support@harry.com">
-                              support@harry.com
+                            <a href="mailto:contacto@jonahbruzzi.me">
+                              contacto@jonahbruzzi.me
                             </a>
                           </span>
                         </div>

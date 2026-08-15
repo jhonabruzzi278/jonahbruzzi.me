@@ -56,7 +56,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
                 <a href="tel:+964-742-44-763">+964 742 44 763</a>
               </p>
               <p className="offcanvas__contact-mail">
-                <a href="mailto:info@harry.com">info@harry.com</a>
+                <a href="mailto:contacto@jonahbruzzi.me">contacto@jonahbruzzi.me</a>
               </p>
             </div>
           </div>

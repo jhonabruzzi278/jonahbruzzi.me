@@ -13,7 +13,7 @@ const team_data = [
     img:img_1,
     name:'Leslie Alexander',
     title:'Founder-CO',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
@@ -26,7 +26,7 @@ const team_data = [
     img:img_2,
     name:'Annette Black',
     title:'Product Designer',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
@@ -39,7 +39,7 @@ const team_data = [
     img:img_3,
     name:'Kathryn Murphy',
     title:'Creative Director',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
@@ -52,7 +52,7 @@ const team_data = [
     img:img_4,
     name:'Guy Hawkins',
     title:'Developer',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
@@ -65,7 +65,7 @@ const team_data = [
     img:img_5,
     name:'Deli Yanky',
     title:'Consulting Officer',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
@@ -78,7 +78,7 @@ const team_data = [
     img:img_6,
     name:'Zin Denvar',
     title:'Sales Manager',
-    mail:'mailto:team@harry.com',
+    mail:'mailto:contacto@jonahbruzzi.me',
     social_links: [
       { link: 'http://facebook.com', target: '_blank', icon: 'fa-brands fa-facebook-f', name: 'Facebook' },
       { link: 'http://twitter.com', target: '_blank', icon: 'fa-brands fa-twitter', name: 'Twitter' },
