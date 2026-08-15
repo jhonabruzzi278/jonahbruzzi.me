@@ -29,15 +29,25 @@ async function parseOrThrow(res: Response, label: string) {
  * on the WordPress side, since admin.jonahbruzzi.me and jonahbruzzi.me are
  * different origins.
  */
+/**
+ * Public, non-personalized reads (products, categories, coupons) are cached
+ * at the origin's revalidate window instead of "no-store" — the host's
+ * connection-flood protection was intermittently dropping concurrent
+ * requests to admin.jonahbruzzi.me, and fetching on every single page load
+ * multiplied outbound connections for data that rarely changes.
+ */
 export async function storeApiFetch<T>(
   path: string,
-  init?: RequestInit
+  init?: RequestInit,
+  revalidateSeconds?: number
 ): Promise<T> {
   const url = `${requireStoreUrl()}/wp-json/wc/store/v1${path}`;
   const res = await fetch(url, {
     ...init,
     headers: { Accept: "application/json", ...init?.headers },
-    cache: "no-store",
+    ...(revalidateSeconds
+      ? { next: { revalidate: revalidateSeconds } }
+      : { cache: "no-store" }),
   });
   return parseOrThrow(res, "WooCommerce Store API error");
 }
@@ -99,7 +109,8 @@ export async function storeApiFetchWithHeaders<T>(
  */
 export async function restApiFetch<T>(
   path: string,
-  init?: RequestInit
+  init?: RequestInit,
+  revalidateSeconds?: number
 ): Promise<T> {
   if (!WOOCOMMERCE_CONSUMER_KEY || !WOOCOMMERCE_CONSUMER_SECRET) {
     throw new Error("WooCommerce REST API credentials are not configured");
@@ -115,7 +126,9 @@ export async function restApiFetch<T>(
       Authorization: `Basic ${auth}`,
       ...init?.headers,
     },
-    cache: "no-store",
+    ...(revalidateSeconds
+      ? { next: { revalidate: revalidateSeconds } }
+      : { cache: "no-store" }),
   });
   return parseOrThrow(res, "WooCommerce REST API error");
 }

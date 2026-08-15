@@ -2,6 +2,10 @@ import { storeApiFetch } from "./client";
 import { mapStoreProduct } from "./mappers";
 import type { WCStoreProduct, Product } from "./types";
 
+// Public catalog data — revalidate periodically instead of hitting
+// WooCommerce on every request (see client.ts for why).
+const PRODUCTS_REVALIDATE_SECONDS = 60;
+
 function slugify(value: string): string {
   return value
     .toLowerCase()
@@ -16,13 +20,19 @@ export async function listProducts(
 ): Promise<Product[]> {
   const query = new URLSearchParams({ per_page: "100", ...params });
   const raw = await storeApiFetch<WCStoreProduct[]>(
-    `/products?${query.toString()}`
+    `/products?${query.toString()}`,
+    undefined,
+    PRODUCTS_REVALIDATE_SECONDS
   );
   return raw.map(mapStoreProduct);
 }
 
 export async function getProductById(id: string | number): Promise<Product> {
-  const raw = await storeApiFetch<WCStoreProduct>(`/products/${id}`);
+  const raw = await storeApiFetch<WCStoreProduct>(
+    `/products/${id}`,
+    undefined,
+    PRODUCTS_REVALIDATE_SECONDS
+  );
   return mapStoreProduct(raw);
 }
 
@@ -39,7 +49,9 @@ export async function listRelatedProducts(
     per_page: "4",
   });
   const raw = await storeApiFetch<WCStoreProduct[]>(
-    `/products?${query.toString()}`
+    `/products?${query.toString()}`,
+    undefined,
+    PRODUCTS_REVALIDATE_SECONDS
   );
   const mapped = raw.map(mapStoreProduct);
   return excludeId

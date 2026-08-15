@@ -12,9 +12,15 @@ function mapCoupon(raw: WCCoupon): Coupon {
   };
 }
 
+// Coupons change rarely — revalidate periodically instead of hitting
+// WooCommerce on every request (see client.ts for why).
+const COUPONS_REVALIDATE_SECONDS = 300;
+
 export async function listActiveCoupons(): Promise<Coupon[]> {
   const raw = await restApiFetch<WCCoupon[]>(
-    "/coupons?per_page=100&status=publish"
+    "/coupons?per_page=100&status=publish",
+    undefined,
+    COUPONS_REVALIDATE_SECONDS
   );
   return raw
     .filter((coupon) => coupon.discount_type === "percent" && coupon.date_expires)
