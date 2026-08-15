@@ -1,0 +1,76 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+:root {
+    /**
+    @font family declaration
+    */
+    @each $ff, $shades in $font-family {
+        @each $shade, $value in $shades {
+            --tp-#{$ff}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @color declaration
+    */
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --tp-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+
+    /**
+    @font weight declaration
+    */
+    
+    @each $fw, $shades in $font-scale {
+        @each $shade, $value in $shades {
+            --tp-#{$fw}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @font size declaration
+    */
+    
+    @each $fz, $shades in $font-size {
+        @each $shade, $value in $shades {
+            --tp-#{$fz}-#{$shade}: #{$value};
+        }
+    }
+
+    /**
+    @jonahbruzzi font fallbacks
+    next/font's `variable` option only accepts a single CSS custom property
+    name (layout.js sets --tp-ff-inter / --tp-ff-heading) — these aliases
+    repoint the old multi-name variables (--tp-ff-body/-p, retired template
+    fonts) at the two real loaded fonts instead of the hardcoded fallback
+    strings the @each loop above generates from _typography.scss.
+    */
+    --tp-ff-body: var(--tp-ff-inter);
+    --tp-ff-p: var(--tp-ff-inter);
+    --tp-ff-poppins: var(--tp-ff-inter);
+    --tp-ff-oswald: var(--tp-ff-inter);
+    --tp-ff-rajdhani: var(--tp-ff-inter);
+    --tp-ff-roboto: var(--tp-ff-inter);
+    --tp-ff-syne: var(--tp-ff-heading);
+    --tp-ff-space: var(--tp-ff-heading);
+
+    /**
+    @jonahbruzzi brand tokens
+    */
+    --jb-white: #FFFFFF;
+    --jb-blue-dark: #0B2545;
+    --jb-blue-light: #38BDF8;
+    --jb-background: #F6F8FB;
+    --jb-text: #172033;
+    --jb-muted: #667085;
+    --jb-border: #E4E7EC;
+    --jb-success: #12B76A;
+    --jb-warning: #F79009;
+    --jb-danger: #F04438;
+    --jb-ff-heading: var(--tp-ff-heading);
+    --jb-ff-body: var(--tp-ff-inter);
+}

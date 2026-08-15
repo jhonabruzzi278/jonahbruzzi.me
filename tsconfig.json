@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": [
+        "public/assets/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@layout/*": [
+        "src/layout/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@svg/*": [
+        "src/svg/*"
+      ],
+      "@ui/*": [
+        "src/ui/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@elements/*": [
+        "src/elements/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

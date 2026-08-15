@@ -1,0 +1,8 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import '@assets/css/nice-select.css';
+@import '@assets/scss/main.scss';
+// Pre-compiled third-party CSS (swiper, slick-carousel, react-tooltip) is
+// imported directly in layout.js instead of via Sass @import — Sass's
+// deprecated @import treats .css files as SCSS to parse, which breaks on
+// swiper's modern CSS syntax.
