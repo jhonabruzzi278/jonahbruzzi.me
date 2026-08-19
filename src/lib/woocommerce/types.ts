@@ -91,7 +91,6 @@ export interface Product {
   brand: { name: string };
   colors: string[];
   type: string;
-  itemInfo: string;
   // Plain-text (HTML-stripped) short description — used for SEO meta
   // description and Product JSON-LD, not currently rendered in the UI.
   description: string;

@@ -71,11 +71,12 @@ export default function ShopMainArea({ category, tag, brand, priceMin, max, pric
     if (shortValue === "Filtro rápido") {
       product_items = all_products
     }
-    // Latest Product
+    // Latest Product — WooCommerce product IDs are auto-incrementing, so
+    // sorting by _id descending is equivalent to sorting by creation date
+    // without needing an extra fetch (no "itemInfo"/date field is mapped
+    // from the Store API response, see mapStoreProduct).
     if (shortValue === "Producto más reciente") {
-      product_items = all_products.filter(
-        (product) => product.itemInfo === "latest-product"
-      );
+      product_items = all_products.slice().sort((a, b) => b._id - a._id);
     }
     // Price low to high
     if (shortValue === "Precio menor a mayor") {

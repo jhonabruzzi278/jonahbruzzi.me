@@ -70,7 +70,6 @@ export function mapStoreProduct(raw: WCStoreProduct): Product {
     brand: { name: "" },
     colors: colorAttribute?.terms.map((term) => term.name) ?? [],
     type: raw.type,
-    itemInfo: "",
     description: plainDescription,
   };
 }

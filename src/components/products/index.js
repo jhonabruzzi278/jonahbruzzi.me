@@ -14,10 +14,20 @@ const tabLabels = {
   "best-selling": "más vendidos",
   "latest-product": "más recientes",
 };
+// Each tab maps to a real WooCommerce Store API sort (orderby/order are
+// forwarded as-is by src/app/api/woocommerce/products/route.ts) — there is
+// no "itemInfo" field on WooCommerce products to filter by client-side.
+const TAB_QUERY_PARAMS = {
+  "top-rated": { orderby: "rating", order: "desc" },
+  "best-selling": { orderby: "popularity", order: "desc" },
+  "latest-product": { orderby: "date", order: "desc" },
+};
 
 const ShopProducts = () => {
-  const { data: products, isError, isLoading } = useGetShowingProductsQuery();
   const [activeTab, setActiveTab] = useState("top-rated");
+  const { data: products, isError, isLoading } = useGetShowingProductsQuery(
+    TAB_QUERY_PARAMS[activeTab]
+  );
   // handle tab product
   const handleTabProduct = (value) => {
     setActiveTab(value);
@@ -41,9 +51,7 @@ const ShopProducts = () => {
   }
 
   if (!isLoading && !isError && products?.products?.length > 0) {
-    const prd_items = products.products;
-    const show_prd = prd_items.filter((item) => item.itemInfo === activeTab);
-    content = show_prd.map((product) => (
+    content = products.products.map((product) => (
       <div key={product._id} className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
         <SingleProduct product={product} />
       </div>
