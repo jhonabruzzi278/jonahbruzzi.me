@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# jonahbruzzi.me
 
-## Getting Started
+Tienda online headless para el mercado chileno ("Cosas que vale la pena descubrir"), construida con Next.js (App Router) sobre un backend WordPress + WooCommerce (`admin.jonahbruzzi.me`). El frontend nunca llama directamente al backend externo — todo pasa por Route Handlers de Next.js que actúan como BFF y mantienen las credenciales de WooCommerce fuera del navegador.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, webpack) + React 19
+- Redux Toolkit / RTK Query para estado y data fetching del cliente
+- TypeScript en las capas de datos y API (`src/lib`, `src/services`, `src/app/api`), JavaScript en la UI heredada del template
+- Bootstrap 5 + Sass para estilos
+
+## Correr localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requiere un archivo `.env.local` (no versionado) con las credenciales server-only de WooCommerce y del plugin Simple JWT Login — ver [`CLAUDE.md`](./CLAUDE.md#environment-variables) para la lista de variables requeridas.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npm run build    # build de producción
+npm run start    # servir el build de producción
+npm run lint     # eslint .
+npm test         # tests (Vitest)
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Para el detalle de arquitectura (flujo de datos, capas, path aliases, sesión de carrito), ver [`CLAUDE.md`](./CLAUDE.md).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📋 Documentación del Proyecto (AI-DLC)
 
-## Learn More
+Este proyecto sigue la metodología AI-DLC. Estado actual: **Early Construction** (código funcional y desplegado; tests automatizados parciales con Vitest, sin CI/CD).
 
-To learn more about Next.js, take a look at the following resources:
+Documentación completa en [`/aidlc-docs/`](./aidlc-docs/):
+- [Requirements](./aidlc-docs/requirements/)
+- [Architecture](./aidlc-docs/design-artifacts/ARCHITECTURE.md)
+- [Domain Model](./aidlc-docs/design-artifacts/DOMAIN_MODEL.md)
+- [Testing Strategy](./aidlc-docs/testing/TEST_STRATEGY.md)
+- [Deployment Checklist](./aidlc-docs/deployment/DEPLOYMENT_CHECKLIST.md)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Última auditoría: 2026-08-18
