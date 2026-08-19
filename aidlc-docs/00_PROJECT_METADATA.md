@@ -5,11 +5,11 @@
 **Repository:** https://github.com/jhonabruzzi278/jonahbruzzi.me (branch `main`, up to date with origin)
 **Analyzed On:** 2026-08-18
 **Current Phase:** Early Construction
-**Last Updated:** 2026-08-18 (testing infra added: Vitest, 37 tests covering `mappers.ts` + cart session logic)
+**Last Updated:** 2026-08-18 (testing infra: Vitest, 55 tests con cobertura 90%+ en `mappers.ts`, `cart.ts` [sesión], `checkout.ts` y `auth.ts`; CI en GitHub Actions con gate de cobertura)
 
 ## Status
 - [x] Inception Phase — parcial (reconstruido retroactivamente en esta auditoría; no existía documentación previa de intent/requirements)
-- [x] Construction Phase — parcial (código funcional y desplegado, sin tests automatizados ni CI/CD)
+- [x] Construction Phase — parcial (código funcional y desplegado; tests automatizados + CI para los módulos críticos ya cubiertos, aún sin pipeline de deploy ni lint/build gateando CI)
 - [ ] Operations Phase — pendiente (no hay evidencia de monitoring, alerting ni runbooks)
 
 ## Quick Links

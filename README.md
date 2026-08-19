@@ -29,7 +29,7 @@ Para el detalle de arquitectura (flujo de datos, capas, path aliases, sesión de
 
 ## 📋 Documentación del Proyecto (AI-DLC)
 
-Este proyecto sigue la metodología AI-DLC. Estado actual: **Early Construction** (código funcional y desplegado; tests automatizados parciales con Vitest, sin CI/CD).
+Este proyecto sigue la metodología AI-DLC. Estado actual: **Early Construction** (código funcional y desplegado; tests con Vitest corriendo en CI con gate de cobertura alta, sin pipeline de deploy automatizado).
 
 Documentación completa en [`/aidlc-docs/`](./aidlc-docs/):
 - [Requirements](./aidlc-docs/requirements/)
