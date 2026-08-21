@@ -36,7 +36,7 @@ const Header = ({ style_2 = false }) => {
                   <div className="col-xxl-1 col-xl-2 col-lg-4 col-md-4 col-sm-5 col-8">
                     <div className="logo">
                       <Link href="/" className="jb-logo-mark">
-                        <Image src={logo} alt="Jonahbruzzi" width={40} height={40} />
+                        <Image src={logo} alt="Jonahbruzzi" width={56} height={56} />
                       </Link>
                     </div>
                   </div>

@@ -13,22 +13,14 @@
 }
 
 /*
-Jonahbruzzi's mark is a solid white silhouette (no background of its own),
-meant for dark surfaces. Header/footer here have light/transparent
-backgrounds, so it's wrapped in this dark-blue chip to stay visible without
-recoloring the whole header/footer to match the guide's dark-blue-header
-spec (out of scope for this pass — revisit once real header artwork/copy
-is finalized).
+Jonahbruzzi's mark (jonahbruzzi-mark.svg) is a solid black silhouette on a
+transparent background — no chip/background needed, it reads fine directly
+against the site's light header/footer.
 */
 .jb-logo-mark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background-color: var(--jb-blue-dark);
-    padding: 6px;
 
     img {
         width: 100%;

@@ -43,7 +43,7 @@ const Footer = () => {
                   <div className="footer__widget footer__widget-11 mb-50 footer-col-11-1">
                     <div className="footer__logo">
                       <Link href="/" className="jb-logo-mark">
-                        <Image src={logo} alt="Jonahbruzzi" width={40} height={40} />
+                        <Image src={logo} alt="Jonahbruzzi" width={56} height={56} />
                       </Link>
                     </div>
 
