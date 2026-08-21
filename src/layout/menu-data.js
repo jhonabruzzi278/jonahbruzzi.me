@@ -43,23 +43,6 @@ const menu_data = [
     title: 'Ofertas',
     link: '/shop?tag=ofertas',
   },
-  {
-    id: 9,
-    hasDropdown: true,
-    title: 'Más',
-    link: '/about',
-    submenus: [
-      { title: 'Nosotros', link: '/about' },
-      { title: 'Contacto', link: '/contact' },
-      { title: 'Preguntas frecuentes', link: '/faq' },
-      { title: 'Privacidad', link: '/policy' },
-      { title: 'Términos y condiciones', link: '/terms' },
-      { title: 'Iniciar sesión', link: '/login' },
-      { title: 'Crear cuenta', link: '/register' },
-      { title: 'Mi carrito', link: '/cart' },
-      { title: 'Favoritos', link: '/wishlist' },
-    ]
-  },
 ]
 
 export default menu_data;

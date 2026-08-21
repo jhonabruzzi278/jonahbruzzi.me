@@ -68,11 +68,8 @@ const Footer = () => {
                   col_3="2"
                   title="Empresa"
                   contents={[
-                    { url: "#", title: "Sobre nosotros" },
-                    { url: "#", title: "Trabaja con nosotros" },
-                    { url: "#", title: "Ubicaciones de tiendas" },
-                    { url: "#", title: "Nuestro blog" },
-                    { url: "#", title: "Opiniones" },
+                    { url: "about", title: "Sobre nosotros" },
+                    { url: "contact", title: "Contacto" },
                   ]}
                 />
                 <SingleWidget
@@ -81,11 +78,11 @@ const Footer = () => {
                   col_3="3"
                   title="Tienda"
                   contents={[
-                    { url: "#", title: "Juegos y video" },
-                    { url: "#", title: "Celulares y tablets" },
-                    { url: "#", title: "Computadores y notebooks" },
-                    { url: "#", title: "Relojes deportivos" },
-                    { url: "#", title: "Descuentos" },
+                    { url: "shop?category=tecnologia", title: "Tecnología" },
+                    { url: "shop?category=hogar", title: "Hogar" },
+                    { url: "shop?category=moda", title: "Moda" },
+                    { url: "shop?category=belleza", title: "Belleza" },
+                    { url: "shop?tag=ofertas", title: "Ofertas" },
                   ]}
                 />
                 <SingleWidget
@@ -94,11 +91,9 @@ const Footer = () => {
                   col_3="4"
                   title="Ayuda"
                   contents={[
-                    { url: "", title: "Preguntas frecuentes" },
-                    { url: "", title: "Opiniones" },
-                    { url: "", title: "Contáctanos" },
-                    { url: "", title: "Envíos" },
-                    { url: "", title: "Devoluciones" },
+                    { url: "faq", title: "Preguntas frecuentes" },
+                    { url: "policy", title: "Privacidad" },
+                    { url: "terms", title: "Términos y condiciones" },
                   ]}
                 />
 
