@@ -83,6 +83,7 @@ export function mapStoreCategory(raw: WCStoreCategory): Category {
     children: [],
     description: "",
     status: "Show",
+    count: raw.count,
   };
 }
 

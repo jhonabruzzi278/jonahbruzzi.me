@@ -104,6 +104,7 @@ export interface Category {
   children: string[];
   description: string;
   status: "Show" | "Hide";
+  count: number;
 }
 
 // Raw WooCommerce Store API cart shapes (subset)

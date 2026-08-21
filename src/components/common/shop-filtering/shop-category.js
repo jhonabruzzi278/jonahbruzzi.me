@@ -21,15 +21,18 @@ const ShopCategory = () => {
     content = <ErrorMessage message="Ocurrió un error" />;
   }
 
-  if (!isLoading && !isError && categories?.categories?.length === 0) {
+  // Only show categories that actually have products — WooCommerce always
+  // includes its "uncategorized" fallback bucket, and any category with 0
+  // products is a dead filter link (leads to an empty shop view).
+  const category_items = (categories?.categories ?? []).filter(
+    (category) => category.slug !== "uncategorized" && category.count > 0
+  );
+
+  if (!isLoading && !isError && category_items.length === 0) {
     content = <ErrorMessage message="¡No se encontraron categorías!" />;
   }
 
-  if (!isLoading && !isError && categories?.categories?.length > 0) {
-    const category_items = categories.categories;
-    // WooCommerce categories are a flat list (no parent/child nesting from
-    // the Store API), unlike the old Mongo schema — each category links
-    // straight to its filtered shop view via its real slug.
+  if (!isLoading && !isError && category_items.length > 0) {
     content = category_items.map((category) => (
       <div key={category._id} className="card">
         <div className="card-header white-bg">

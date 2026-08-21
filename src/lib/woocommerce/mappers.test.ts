@@ -236,6 +236,7 @@ describe("mapStoreCategory", () => {
     expect(category.parent).toBe("Hogar");
     expect(category.img).toBe("hogar.jpg");
     expect(category.status).toBe("Show");
+    expect(category.count).toBe(12);
   });
 
   it("defaults img to an empty string when there is no image", () => {
