@@ -102,16 +102,7 @@ const Footer = () => {
                     <h3 className="footer__widget-title">Contáctanos</h3>
 
                     <div className="footer__widget-content">
-                      <p className="footer__text">
-                        Encuentra la tienda más cercana a ti. Ver{" "}
-                        <a href="#">nuestras tiendas</a>
-                      </p>
                       <div className="footer__contact">
-                        <div className="footer__contact-call">
-                          <span>
-                            <a href="tel:624-423-26-72">+624 423 26 72</a>
-                          </span>
-                        </div>
                         <div className="footer__contact-mail">
                           <span>
                             <a href="mailto:contacto@jonahbruzzi.me">

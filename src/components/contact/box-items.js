@@ -34,31 +34,16 @@ const BoxItems = () => {
             icon={icon_1}
             title="Contacto"
             content={
-              <>
-                <p>
-                  <a href="mailto:location@website.com">location@website.com</a>
-                </p>
-                <p>
-                  <a href="tel:602-762-472-96">+(602) 762 472 96</a>
-                </p>
-              </>
+              <p>
+                <a href="mailto:contacto@jonahbruzzi.me">contacto@jonahbruzzi.me</a>
+              </p>
             }
           />
           <SingleItem
             icon={icon_2}
-            title="Ubicación"
+            title="Envíos"
             content={
-              <>
-                <p>
-                  <a
-                    rel="noreferrer"
-                    href="https://www.google.com/maps/place/102+Thompson+St,+New+York,+NY+10012,+USA/@40.7255437,-74.004061,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598c338f691d:0x6d5f394e7a1962cc!8m2!3d40.7255397!4d-74.0018723"
-                    target="_blank"
-                  >
-                    88 New South Head Rd, Triple, New York
-                  </a>
-                </p>
-              </>
+              <p>Hacemos envíos a todo Chile. Envío estándar $3.990.</p>
             }
           />
           <SingleItem

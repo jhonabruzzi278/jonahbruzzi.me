@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 // internal
 import shape from "@assets/img/shape/offcanvas-shape-1.png";
-import logo from "@assets/img/logo/logo-black.svg";
+import logo from "@assets/img/logo/jonahbruzzi-mark.svg";
 import MobileMenus from "./mobile-menus";
 import SocialLinks from "@components/social";
 
@@ -29,9 +29,9 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
           </div>
           <div className="offcanvas__content">
             <div className="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
-              <div className="offcanvas__logo logo">
+              <div className="offcanvas__logo jb-logo-mark">
                 <Link href="/">
-                  <Image src={logo} alt="logo" />
+                  <Image src={logo} alt="Jonahbruzzi" width={48} height={48} />
                 </Link>
               </div>
             </div>
@@ -43,18 +43,15 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
               </div>
             </div>
             <div className="offcanvas__btn">
-              <a href="#" className="tp-btn-offcanvas">
-                Comenzar <i className="fa-regular fa-chevron-right"></i>
-              </a>
+              <Link href="/shop" className="tp-btn-offcanvas">
+                Ir a la tienda <i className="fa-regular fa-chevron-right"></i>
+              </Link>
             </div>
             <div className="offcanvas__social">
               <h3 className="offcanvas__social-title">Síguenos :</h3>
               <SocialLinks />
             </div>
             <div className="offcanvas__contact">
-              <p className="offcanvas__contact-call">
-                <a href="tel:+964-742-44-763">+964 742 44 763</a>
-              </p>
               <p className="offcanvas__contact-mail">
                 <a href="mailto:contacto@jonahbruzzi.me">contacto@jonahbruzzi.me</a>
               </p>

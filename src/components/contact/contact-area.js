@@ -1,6 +1,5 @@
 import BoxItems from "./box-items";
 import FormArea from "./form-area";
-import LocationArea from "./location-area";
 import TopBar from "./top-bar";
 
 const ContactArea = () => {
@@ -8,11 +7,10 @@ const ContactArea = () => {
     <>
       <TopBar
         title="CONÓCENOS"
-        subtitle="¿Tienes un proyecto en mente? Hablemos."
+        subtitle="¿Tienes una consulta? Escribinos."
       />
       <BoxItems/>
       <FormArea/>
-      <LocationArea/>
     </>
   );
 };

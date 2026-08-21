@@ -26,10 +26,10 @@ const ShopFeature = () => {
           <div className="row">
             <SingleFeature
               icon={<ShippingCar />}
-              title="Envío gratis"
+              title="Envío a todo Chile"
               subtitle={
                 <>
-                  Envío gratis en pedidos <br /> sobre $120
+                  Envío estándar <br /> $3.990
                 </>
               }
             />
@@ -47,7 +47,7 @@ const ShopFeature = () => {
               title="Soporte"
               subtitle={
                 <>
-                  24 horas al día, 7 días <br /> a la semana
+                  Escríbenos y te <br /> respondemos a la brevedad
                 </>
               }
             />
@@ -56,7 +56,7 @@ const ShopFeature = () => {
               title="Pago"
               subtitle={
                 <>
-                  Paga con múltiples <br /> tarjetas de crédito
+                  Paga con Mercado Pago, <br /> tarjeta de crédito o débito
                 </>
               }
             />
